@@ -70,7 +70,7 @@ public class DbManager extends SQLiteOpenHelper {
         contentValues.put(TIME_ON, time_on);
         contentValues.put(TIME_OFF, time_off);
 
-        db.insert(TABLE_SMS, null, contentValues);
+        db.insert(TABLE_SMS,null, contentValues);
         return true;
     }
     public boolean UpdateDetails(String no,String power, String pump)

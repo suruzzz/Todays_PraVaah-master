@@ -135,7 +135,7 @@ public class CancelAlarm extends AppCompatActivity
             cursor.moveToFirst();
             String name =  cursor.getString(cursor.getColumnIndex(db.NAME));
 
-            tv.setText(name);
+            tv.setText(name+" :- Shift "+item);
         }
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
