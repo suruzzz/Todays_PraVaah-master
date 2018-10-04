@@ -129,8 +129,14 @@ public class CancelAlarm extends AppCompatActivity
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
          item = parent.getItemAtPosition(position).toString();
+        Cursor cursor=db.getDataUsername(item);
+        if(cursor.getCount()!=0) {
 
-        tv.setText(db.getDataUsername(item));
+            cursor.moveToFirst();
+            String name =  cursor.getString(cursor.getColumnIndex(db.NAME));
+
+            tv.setText(name);
+        }
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
 

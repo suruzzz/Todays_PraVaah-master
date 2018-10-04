@@ -185,10 +185,10 @@ public class DbManager extends SQLiteOpenHelper {
         db.close();
     }
 
-    public String getDataUsername( String id) {
+    public Cursor getDataUsername( String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select " + NAME + " from " + TABLE_SMS + " where " + ID + " = " + "'" + id + "'", null);
-        return NAME;
+        return res;
     }
 
     public Cursor viewData() {
